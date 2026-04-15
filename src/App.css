@@ -167,7 +167,7 @@
 
   &::before,
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     top: -4.5px;
     border: 5px solid transparent;
@@ -180,5 +180,111 @@
   &::after {
     right: 0;
     border-right-color: var(--border);
+  }
+}
+
+.todo-page {
+  width: min(760px, 92%);
+  margin: 48px auto;
+  text-align: left;
+}
+
+.todo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+
+  button {
+    border: 1px solid var(--accent-border);
+    background: var(--accent-bg);
+    color: var(--text-h);
+    border-radius: 8px;
+    padding: 10px 14px;
+    cursor: pointer;
+  }
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 0;
+  display: grid;
+  gap: 10px;
+
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    background: color-mix(in oklab, var(--bg) 92%, var(--accent-bg));
+    color: var(--text-h);
+  }
+}
+
+.todo-item-actions {
+  display: flex;
+  gap: 8px;
+
+  button {
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    padding: 8px 10px;
+    cursor: pointer;
+    background: var(--bg);
+    color: var(--text-h);
+    font: inherit;
+  }
+}
+
+.todo-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+.todo-modal {
+  width: min(460px, 100%);
+  border-radius: 12px;
+  padding: 22px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+
+  h2 {
+    margin-top: 0;
+  }
+
+  input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    margin: 10px 0 18px;
+    font: inherit;
+    color: var(--text-h);
+    background: var(--bg);
+  }
+}
+
+.todo-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+
+  button {
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    padding: 10px 12px;
+    cursor: pointer;
+    background: var(--bg);
+    color: var(--text-h);
   }
 }
