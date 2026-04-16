@@ -15,7 +15,9 @@ export const useTodoViewModel = () => {
     isError,
     error,
     refetch,
-  } = useGetTodosQuery();
+  } = useGetTodosQuery(undefined, {
+    pollingInterval: 30000,
+  });
   const [createTodoMutation, { isLoading: isCreating }] =
     useCreateTodoMutation();
   const [updateTodoMutation, { isLoading: isUpdating }] =
